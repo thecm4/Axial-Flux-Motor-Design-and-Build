@@ -1,6 +1,5 @@
 # Axial-Flux-Motor-Design-and-Build
 
-## Description
 This project is a full-cycle design and build of a coreless axial flux permanent-magnet synchronous motor, from first-principles electromagnetic design through CNC-machined hardware and closed-loop FOC control. The design process covers magnetic circuit analysis (air-gap sizing via the permeance/load-line method, NdFeB magnet grade selection under real thermal and demagnetization constraints), torque and current sizing from a shear-stress/torque-density model, slot/pole optimization for cogging and winding-factor trade-offs, and structural analysis of axial magnetic attraction forces on the rotor assembly. The motor is hand-wound (9 slots, 8 poles), driven by a VESC running field-oriented control, with a custom-built dynamometer and DAQ instrumentation to validate the as-built performance against the design targets.
 
 ## Origin
