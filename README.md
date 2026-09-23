@@ -21,6 +21,43 @@ My new plan became to put together a barely feasible design in a single day and 
 
 I used Fusion, by Autodesk, for the design, since Fusion made the whole workflow practical in a single piece of software. It exports cleanly for 3D printing, so moving a design from CAD to a printable file was straightforward, and it includes a Manufacture workspace that generates toolpaths directly compatible with the Tormach 770M. That meant I could design, prototype, and eventually machine the final part without ever switching tools or translating files between platforms, which cut out a whole category of errors that come from moving a design between incompatible software.
 
-[First model of the Axial Flux Stator and Rotor] (images/stator_1.0)
+**Stator and Rotor Design**
+
+The stator design incorporated a recess to seat the axial thrust bearing, which is necessary to let the motor rotate freely even while a substantial force is pushing down on the bearing. Traditional radial bearings are not designed to handle axial loads and would pinch their ball bearings and seize under this kind of force. The axial thrust bearing chosen for this design is rated for a dynamic load of up to 3,500 pounds, far more than enough margin for this application. The stator frame's square base, with mounting holes at each corner, exists specifically so the motor can be bolted directly to a table for testing purposes.
+
+The rotor design incorporated the shaft as a built-in stepped feature. The smaller, center portion is 40mm in diameter and fits inside the axial thrust bearing, while the larger step is 60mm and sits directly on top of the bearing to distribute the load across it. Recessed pockets in the rotor hold the 1-inch diameter magnets in place, secured with epoxy or adhesive.
+
+![First model of the Axial Flux Stator and Rotor](images/Stator_1.0.png)
+*Design 1.0 of the Stator*
+
+![First model of the Axial Flux Stator and Rotor](images/rotor_1.0.png)
+*Design 1.0 of the Rotor*
 
 
+
+**Constraints and Priorities**
+
+This design followed a deliberate process, worked through in order:
+
+What are the absolute constraints?
+What are the soft constraints?
+What are the priorities on performance and cost?
+What is the hierarchy of those priorities, and how does that hierarchy drive the design choices?
+
+The first absolute constraint was the machine that would actually cut the final stator and rotor: a Tormach 770M. Pulling its spec sheet, I found a Y-axis travel distance of 7.5 inches, the smallest of its three axes, which directly capped the largest motor diameter I could build while keeping the housing in machined aluminum. I settled on a 7-inch diameter, leaving a half inch of clearance. The Tormach is also a 3-axis machine, which meant any design requiring more axes to manufacture was off the table from the start.
+
+The soft constraints were time and cost. I needed a design that minimized material cost and minimized manufacturing time, driven by a hard 16-week deadline. Once I started sourcing parts and pricing materials, the first thing that stood out was just how expensive neodymium magnets actually were. My original design called for 12 slots and 14 poles, which meant more copper wire and more magnets than I'd budgeted for. 
+
+![12 Slot and 14 Pole winding arrangement](images/12slot_14pole.png)
+
+*12 Slot and 14 Pole Winding Arrangement*
+
+After working through slot and pole configuration tables to compare winding factor and cogging steps across different combinations, I landed on a 9-slot, 8-pole arrangement that actually had a better winding factor and nearly identical cogging performance to my original design. That single change cut material cost nearly in half and roughly halved assembly time as well.
+
+![12 Slot and 14 Pole winding arrangement](images/9slot_8pole.png)
+
+*9 Slot and 8 Pole Winding Arrangement*
+
+With those constraints in place, I ranked my priorities as follows: cost, difficulty of manufacturing, accessibility of resources to learn the chosen winding approach, lead time and availability of materials, testability, torque, speed, and longevity, in that order.
+
+One early discovery reshaped my magnet selection significantly. Neodymium magnets are not inherently heat-tolerant. Maintaining their magnetization at elevated temperatures requires selecting an H-grade or SH-grade variant rather than the standard grade. Standard N42 magnets demagnetize significantly around 80 degrees Celsius, a temperature I could realistically reach within minutes of starting the motor, which made the standard grade essentially unusable for this application. The only H-grade or higher magnets I could find were 1-inch diameter discs, around $10 each, in N42SH, a genuinely strong grade for this application. But their small disc size left a lot of dead space between poles that contributed nothing to torque.
