@@ -27,9 +27,11 @@ The stator design incorporated a recess to seat the axial thrust bearing, which 
 The rotor design incorporated the shaft as a built-in stepped feature. The smaller, center portion is 40mm in diameter and fits inside the axial thrust bearing, while the larger step is 60mm and sits directly on top of the bearing to distribute the load across it. Recessed pockets in the rotor hold the 1-inch diameter magnets in place, secured with epoxy or adhesive.
 
 ![First model of the Axial Flux Stator and Rotor](images/Stator_1.0.png)
+
 *Design 1.0 of the Stator*
 
 ![First model of the Axial Flux Stator and Rotor](images/rotor_1.0.png)
+
 *Design 1.0 of the Rotor*
 
 
