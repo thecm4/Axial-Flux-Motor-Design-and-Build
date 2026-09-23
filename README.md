@@ -60,4 +60,8 @@ After working through slot and pole configuration tables to compare winding fact
 
 With those constraints in place, I ranked my priorities as follows: cost, difficulty of manufacturing, accessibility of resources to learn the chosen winding approach, lead time and availability of materials, testability, torque, speed, and longevity, in that order.
 
+
+
 One early discovery reshaped my magnet selection significantly. Neodymium magnets are not inherently heat-tolerant. Maintaining their magnetization at elevated temperatures requires selecting an H-grade or SH-grade variant rather than the standard grade. Standard N42 magnets demagnetize significantly around 80 degrees Celsius, a temperature I could realistically reach within minutes of starting the motor, which made the standard grade essentially unusable for this application. The only H-grade or higher magnets I could find were 1-inch diameter discs, around $10 each, in N42SH, a genuinely strong grade for this application. But their small disc size left a lot of dead space between poles that contributed nothing to torque.
+
+## More to come as the project continues
