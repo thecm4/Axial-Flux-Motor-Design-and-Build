@@ -21,5 +21,6 @@ My new plan became to put together a barely feasible design in a single day and 
 
 I used Fusion, by Autodesk, for the design, since Fusion made the whole workflow practical in a single piece of software. It exports cleanly for 3D printing, so moving a design from CAD to a printable file was straightforward, and it includes a Manufacture workspace that generates toolpaths directly compatible with the Tormach 770M. That meant I could design, prototype, and eventually machine the final part without ever switching tools or translating files between platforms, which cut out a whole category of errors that come from moving a design between incompatible software.
 
+[First model of the Axial Flux Stator and Rotor] (images/stator_1.0)
 
 
